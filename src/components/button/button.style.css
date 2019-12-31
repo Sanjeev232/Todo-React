@@ -13,6 +13,23 @@
   cursor: pointer;
   transition: all 0.2s;
 }
+
+.add-button:hover {
+  transform: translateY(-2px);
+  color: var(--color-Grey-dark-1);
+}
+
 .add-button:active {
   transform: translateY(2px);
+}
+.button-small {
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-right: 0.1rem;
+  background-color: #c72c41;
+  color: var(--color-white-1);
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
 }

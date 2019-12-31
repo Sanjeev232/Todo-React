@@ -9,6 +9,8 @@ class App extends Component {
     this.state = {
       data: []
     };
+
+    this.addTodo = this.addTodo.bind(this);
   }
 
   addTodo() {
@@ -20,7 +22,7 @@ class App extends Component {
       <div className="container">
         <header className="header">
           <h1 className="main-heading">Todo List</h1>
-          <TodoButton addTodo={this.addTodo.bind(this)}> </TodoButton>
+          <TodoButton addTodo={this.addTodo}> </TodoButton>
         </header>
         <InputForm state={this.state}></InputForm>
       </div>

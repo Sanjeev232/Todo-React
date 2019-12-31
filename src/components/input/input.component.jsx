@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import "./input.style.css";
 
 class InputForm extends Component {
   render() {
     console.log(this.props);
     return this.props.state.data.map((todo, index) => {
       return (
-        <div key={index}>
-          <input type="text" value={todo} />
+        <div key={index} className="input">
+          <input type="text" className="input-field"/>
+          <button className="add-button button-small">X</button>
         </div>
       );
     });
