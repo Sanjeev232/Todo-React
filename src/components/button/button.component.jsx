@@ -4,10 +4,7 @@ import "./button.style.css";
 class TodoButton extends Component {
   render() {
     return (
-      <button
-        className="add-button"
-        onClick={this.props.addTodo}
-      >
+      <button className="add-button" onClick={this.props.addInput}>
         +
       </button>
     );

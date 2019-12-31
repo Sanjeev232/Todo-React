@@ -24,8 +24,8 @@
 }
 .button-small {
   font-size: 1rem;
+  margin-right: 1rem;
   border-radius: 10px;
-  margin-right: 0.1rem;
   background-color: #c72c41;
   color: var(--color-white-1);
   -webkit-animation-name: zoomIn;
