@@ -8,7 +8,6 @@ class InputForm extends Component {
     return this.props.state.data.map((todo, index) => {
       return (
         
-
           <div key={index} className="input">
           <input
             type="text"

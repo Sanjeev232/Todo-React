@@ -24,7 +24,7 @@
   transition: all 3s;
 }
 .input-field:focus {
-  outline: none;
+  outline: transparent;  
 }
 
 .input-field::-webkit-input-placeholder {

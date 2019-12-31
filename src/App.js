@@ -9,24 +9,25 @@ class App extends Component {
     this.state = {
       data: []
     };
-
-    this.addInput = this.addInput.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+    // changed to Es6 arrow function so no need to bind
+    // this.addInput = this.addInput.bind(this);
+    // this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  addInput() {
+  addInput = () => {
     // console.log("ADDDED");
     this.setState({ data: [...this.state.data, ""] });
-  }
+  };
 
-  handleKeyPress(event) {
+  handleKeyPress = (event) => {
     if (event.key === "Enter" && event.target.value !== "") {
       // console.log('aaaaa')
+      event.preventDefault();
       this.addInput();
     } else if (event.key === "Enter" && event.target.value === "") {
       alert("Please Enter Your Todo");
     }
-  }
+  };
 
   render() {
     return (
