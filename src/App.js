@@ -11,11 +11,22 @@ class App extends Component {
     };
 
     this.addTodo = this.addTodo.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   addTodo() {
+    // console.log("ADDDED");
     this.setState({ data: [...this.state.data, ""] });
   }
+
+  handleKeyPress(event) {
+    if (event.key === "Enter" && event.target.value ) {
+      console.log('aaaaa')
+      this.addTodo();
+    }
+  }
+
+
 
   render() {
     return (
@@ -24,7 +35,10 @@ class App extends Component {
           <h1 className="main-heading">Todo List</h1>
           <TodoButton addTodo={this.addTodo}> </TodoButton>
         </header>
-        <InputForm state={this.state}></InputForm>
+        <InputForm
+          state={this.state}
+          handleKeyPress={this.handleKeyPress}
+        ></InputForm>
       </div>
     );
   }

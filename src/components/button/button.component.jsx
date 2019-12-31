@@ -7,7 +7,6 @@ class TodoButton extends Component {
       <button
         className="add-button"
         onClick={this.props.addTodo}
-      
       >
         +
       </button>
