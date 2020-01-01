@@ -7,19 +7,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      currentItem: {
+        text: "",
+        key: "",
+        isEditableOrNot: true
+      }
     };
     // changed to Es6 arrow function so no need to bind
     // this.addInput = this.addInput.bind(this);
     // this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  addInput = () => {
+  addInput = event => {
     // console.log("ADDDED");
     this.setState({ data: [...this.state.data, ""] });
   };
 
-  handleKeyPress = (event) => {
+  handleKeyPress = event => {
     if (event.key === "Enter" && event.target.value !== "") {
       // console.log('aaaaa')
       event.preventDefault();

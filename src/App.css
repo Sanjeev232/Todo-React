@@ -27,17 +27,17 @@ body {
     var(--color-Grey-dark-1)
   );
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 .container {
   max-width: 50rem;
   margin: 7rem auto;
   box-shadow: var(--box-shadow-dark);
-  min-height: 50rem;
+  min-height: 80vh;
   background-color: #fff;
   border: 1px solid #fff3af;
-  border-radius: 1%;
+  border-radius: 1rem;
   background-color: var(--color-Grey-dark-1);
 }
 
@@ -54,9 +54,57 @@ body {
   color: var(--color-yellow-hover);
   font-size: 3rem;
   font-weight: 900;
-  translate: all 0.2s;
+  translate: all 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
 }
 .main-heading:hover {
   transform: scale(1.1);
-  color: var(--color-white-1);
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
