@@ -1,25 +1,20 @@
 import React, { Component } from "react";
 import "./App.css";
 import TodoButton from "./components/button/button.component.jsx";
-import InputForm from "./components/input/input.component.jsx";
+import TodoList from "./components/TodoList/todolist.component.jsx";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      currentItem: {
-        text: "",
-        key: "",
-        isEditableOrNot: true
-      }
+      data: []
     };
     // changed to Es6 arrow function so no need to bind
     // this.addInput = this.addInput.bind(this);
     // this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  addInput = event => {
+  addInput = () => {
     // console.log("ADDDED");
     this.setState({ data: [...this.state.data, ""] });
   };
@@ -34,6 +29,13 @@ class App extends Component {
     }
   };
 
+  handleChange = (e, index) => {
+    this.state.data[index] = e.target.value;
+
+    //set the changed state
+    this.setState({ data: this.state.data });
+  };
+
   render() {
     return (
       <div className="container">
@@ -41,10 +43,11 @@ class App extends Component {
           <h1 className="main-heading">Todo List</h1>
           <TodoButton addInput={this.addInput}> </TodoButton>
         </header>
-        <InputForm
+        <TodoList
           state={this.state}
           handleKeyPress={this.handleKeyPress}
-        ></InputForm>
+          handleChange={this.handleChange}
+        ></TodoList>
       </div>
     );
   }
