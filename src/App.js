@@ -16,16 +16,20 @@ class App extends Component {
 
   addInput = () => {
     // console.log("ADDDED");
-    this.setState({ data: [...this.state.data, ""] });
+
+    const dataLength = this.state.data.length;
+
+    if (dataLength === 0 || this.state.data[dataLength - 1] !== "") {
+      this.setState({ data: [...this.state.data, ""] });
+    } else {
+      alert("Please Enter Your Todo First");
+    }
   };
 
   handleKeyPress = event => {
-    if (event.key === "Enter" && event.target.value !== "") {
+    if (event.key === "Enter") {
       // console.log('aaaaa')
-      event.preventDefault();
       this.addInput();
-    } else if (event.key === "Enter" && event.target.value === "") {
-      alert("Please Enter Your Todo");
     }
   };
 
