@@ -8,17 +8,17 @@ class TodoList extends Component {
     this.toggleInputFocus.focus();
   }
 
-  
-
   render() {
     console.log(this.props);
-    return this.props.state.data.map((todoItems, index) => {
-      return (
-        <div key={index} className="input">
+
+    const todoElements = this.props.state.data.map((todoItems, index) => {
+      let todoElement;
+      if (this.props.state.data.length - 1 === index) {
+        todoElement = (
           <input
             type="text"
-            className="input-field"
-            placeholder="Add here"
+            className="input input-field"
+            placeholder="Add Todo here"
             value={todoItems}
             ref={input => {
               this.toggleInputFocus = input;
@@ -26,10 +26,13 @@ class TodoList extends Component {
             onChange={e => this.props.handleChange(e, index)}
             onKeyPress={this.props.handleKeyPress}
           />
-          {/* <button className="add-button button-small">X</button> */}
-        </div>
-      );
+        );
+      } else {
+        todoElement = <div className="saved-todo">{todoItems}</div>;
+      }
+      return <li key={index}>{todoElement}</li>;
     });
+    return <ul className="saved-todo__list">{todoElements}</ul>;
   }
 }
 
