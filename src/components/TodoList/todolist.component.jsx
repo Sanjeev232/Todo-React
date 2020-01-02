@@ -24,13 +24,23 @@ class TodoList extends Component {
               this.toggleInputFocus = input;
             }}
             onChange={e => this.props.handleChange(e, index)}
-            onKeyPress={this.props.handleKeyPress}
+            onKeyPress={e => this.props.handleKeyPress(e)}
           />
         );
       } else {
-        todoElement = <div className="saved-todo">{todoItems}</div>;
+        todoElement = (
+          <div className="saved-todo">
+            {todoItems}{" "}
+            <button
+              className="add-button button-small"
+              onClick={() => this.props.handleRemove(index)}
+            >
+              X
+            </button>
+          </div>
+        );
       }
-      return <li key={index}>{todoElement}</li>;
+      return <li key={index}>{todoElement} </li>;
     });
     return <ul className="saved-todo__list">{todoElements}</ul>;
   }

@@ -13,7 +13,6 @@
   background-color: #333;
   border: none;
   letter-spacing: 0.2rem;
-  /* text-align: center; */
   color: var(--color-white-1);
   border-bottom: 1px solid var(--color-list-items-1);
   padding: 1rem 1rem;
@@ -47,7 +46,9 @@
 }
 
 .saved-todo {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid var(--color-list-items-1);
   font-size: 2rem;
   font-weight: 600;
@@ -55,11 +56,15 @@
   list-style: none;
   color: var(--color-white-1);
   text-transform: capitalize;
-  translate: all 0.2s;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  transition: all 0.3s;
 }
 
 .saved-todo:hover {
-  color: var(--color-yellow-hover);
+  color: #c72c41;
 }
 
 .saved-todo__list {

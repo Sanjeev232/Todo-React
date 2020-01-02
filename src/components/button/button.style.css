@@ -27,13 +27,18 @@
   transform: translateY(2px);
 }
 .button-small {
-  font-size: 1rem;
-  margin-right: 1rem;
-  border-radius: 10px;
-  background-color: #c72c41;
-  color: var(--color-white-1);
+  font-size: 0.9rem;
+  font-weight: 900;
+  margin-right: 0.2rem;
+  border-radius: 100%;
+  background-color: var(--color-white-1);
+  color: #c72c41;
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
+}
+.button-small:hover {
+  background-color: #c72c41;
+  color: var(--color-white-1);
 }

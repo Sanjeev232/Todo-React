@@ -38,6 +38,16 @@ class App extends Component {
 
     //set the changed state
     this.setState({ data: this.state.data });
+    console.log(this.state.data, "!!!");
+  };
+
+  handleRemove = index => {
+    //remove items at the index
+    this.state.data.splice(index, 1);
+    console.log(this.state.data, "!!!");
+
+    //update the state
+    this.setState({ data: this.state.data });
   };
 
   render() {
@@ -51,6 +61,7 @@ class App extends Component {
           state={this.state}
           handleKeyPress={this.handleKeyPress}
           handleChange={this.handleChange}
+          handleRemove={this.handleRemove}
         ></TodoList>
       </div>
     );
