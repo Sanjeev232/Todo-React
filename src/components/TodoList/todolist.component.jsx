@@ -20,6 +20,7 @@ class TodoList extends Component {
             className="input input-field"
             placeholder="Add Todo here"
             value={todoItems}
+            maxLength="33"
             ref={input => {
               this.toggleInputFocus = input;
             }}
@@ -30,7 +31,7 @@ class TodoList extends Component {
       } else {
         todoElement = (
           <div className="saved-todo">
-            <input type="radio" className ="checkbox-container"/>
+            <input type="radio" className="checkbox-container" />
             <p className="todo-main__items">{todoItems} </p>
             <button
               className="add-button button-small"
@@ -43,7 +44,11 @@ class TodoList extends Component {
       }
       return <li key={index}>{todoElement} </li>;
     });
-    return <ul className="saved-todo__list">{todoElements}</ul>;
+    return (
+      <div>
+        <ul className="saved-todo__list">{todoElements}</ul>
+      </div>
+    );
   }
 }
 

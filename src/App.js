@@ -19,7 +19,7 @@ class App extends Component {
 
     const dataLength = this.state.data.length;
 
-    if (dataLength === 0 || this.state.data[dataLength - 1] !== "") {
+    if (dataLength === 0 || this.state.data[dataLength - 1].trim() !== "") {
       this.setState({ data: [...this.state.data, ""] });
     } else {
       alert("Please Enter Your Todo First");

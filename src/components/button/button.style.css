@@ -27,8 +27,9 @@
   transform: translateY(2px);
 }
 .button-small {
-  font-size: 0.9rem;
-  font-weight: 900;
+  box-sizing: content-box;
+  font-size: 1rem;
+  font-weight: bolder;
   margin-right: 0.3rem;
   border-radius: 100%;
   background-color: var(--color-white-1);
@@ -42,4 +43,12 @@
 .button-small:hover {
   background-color: #c72c41;
   color: var(--color-white-1);
+}
+
+@media only screen and (max-width: 600px) {
+  .button-small {
+    font-size: 1.5rem;
+    background-color: #c72c41;
+    color: var(--color-white-1);
+  }
 }

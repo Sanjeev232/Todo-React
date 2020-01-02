@@ -16,8 +16,10 @@
 
 html {
   font-size: 62.5%;
+}
 
-  @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+  html {
     font-size: 55%;
   }
 }
@@ -36,14 +38,22 @@ body {
 }
 
 .container {
+  position: relative;
   max-width: 50rem;
   margin: 7rem auto;
   box-shadow: var(--box-shadow-dark);
-  min-height: 80vh;
-  background-color: #fff;
+  min-height: 81vh;
   border: 1px solid #fff3af;
   border-radius: 1rem;
   background-color: var(--color-Grey-dark-1);
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: auto;
+    border: none;
+    min-height: 100vh;
+  }
 }
 
 .header {
