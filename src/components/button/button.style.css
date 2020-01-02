@@ -29,7 +29,7 @@
 .button-small {
   font-size: 0.9rem;
   font-weight: 900;
-  margin-right: 0.2rem;
+  margin-right: 0.3rem;
   border-radius: 100%;
   background-color: var(--color-white-1);
   color: #c72c41;
@@ -37,6 +37,7 @@
   animation-name: zoomIn;
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
+  display: inline-block;
 }
 .button-small:hover {
   background-color: #c72c41;

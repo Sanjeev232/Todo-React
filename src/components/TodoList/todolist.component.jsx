@@ -30,7 +30,8 @@ class TodoList extends Component {
       } else {
         todoElement = (
           <div className="saved-todo">
-            {todoItems}{" "}
+            <input type="radio" className ="checkbox-container"/>
+            <p className="todo-main__items">{todoItems} </p>
             <button
               className="add-button button-small"
               onClick={() => this.props.handleRemove(index)}
