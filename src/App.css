@@ -64,7 +64,11 @@ body {
   border-bottom: 1px solid var(--color-white-1);
   height: 5rem;
 }
-
+@media only screen and (max-width: 600px) {
+  .header {
+    height: 7rem;
+  }
+}
 .main-heading {
   margin-left: 2rem;
   color: var(--color-yellow-hover);
@@ -78,6 +82,13 @@ body {
 }
 .main-heading:hover {
   transform: scale(1.1);
+}
+@media only screen and (max-width: 600px) {
+  .main-heading {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-left: 3rem;
+  }
 }
 
 @keyframes bounceIn {
