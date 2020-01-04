@@ -1,0 +1,16 @@
+.reset-button {
+  background-color: transparent;
+  color: var(--color-yellow-hover);
+  padding: 0.3rem 1rem;
+  font-size: 1.2em;
+  font-weight: bolder;
+  outline: none;
+  border: 1px solid var(--color-white-1);
+  margin-left: 15rem;
+}
+
+.reset-button:hover {
+  background-color: var(--color-crimson-dark);
+  color: var(--color-white-1);
+  outline: none;
+}

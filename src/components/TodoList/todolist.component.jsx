@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./todolist.style.css";
 
 class TodoList extends Component {
-  componentDidUpdate() {
+  
+  componentDidUpdate(event) {
     // console.log("@@@@@@@@@@@@ 2");
     // console.dir(this.props.state.data);
     this.toggleInputFocus.focus();
@@ -20,7 +21,7 @@ class TodoList extends Component {
             className="input input-field"
             placeholder="Add Todo here"
             value={todoItems}
-            maxLength="33"
+            maxLength="36"
             ref={input => {
               this.toggleInputFocus = input;
             }}

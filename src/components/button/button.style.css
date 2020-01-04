@@ -1,17 +1,19 @@
 .add-button {
+  display: inline-block;
   margin-right: 2rem;
-  color: var(--color-white-1);
+  color: var(--color-yellow-hover);
   font-size: 2rem;
   font-weight: 900;
-  background-color: var(--color-yellow-hover);
+  background-color: transparent;
+  border: 1px solid #ffffff;
   border-radius: 100px;
-  border: none;
+  /* border: none; */
   position: relative;
   overflow: hidden;
   outline: none;
   padding: 0.5rem 1.2rem;
   cursor: pointer;
-  translate: all 1s;
+  transition: all 0.2s;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-name: bounceIn;
@@ -20,7 +22,8 @@
 
 .add-button:hover {
   transform: translateY(-2px);
-  color: var(--color-Grey-dark-1);
+  background-color: var(--color-crimson-dark);
+  color: var(--color-white-1);
 }
 
 .add-button:active {
@@ -33,22 +36,21 @@
   margin-right: 0.3rem;
   border-radius: 100%;
   background-color: var(--color-white-1);
-  color: #c72c41;
+  color: var(--color-crimson-dark);
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
-  display: inline-block;
 }
 .button-small:hover {
-  background-color: #c72c41;
+  background-color: var(--color-crimson-dark);
   color: var(--color-white-1);
 }
 
 @media only screen and (max-width: 600px) {
   .button-small {
     font-size: 1.5rem;
-    background-color: #c72c41;
+    background-color: var(--color-crimson-dark);
     color: var(--color-white-1);
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import TodoButton from "./components/button/button.component.jsx";
 import TodoList from "./components/TodoList/todolist.component.jsx";
+import Resetbutton from "./components/button/reset.component.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class App extends Component {
   };
 
   handleChange = (e, index) => {
-    this.state.data[index] = e.target.value;
+    this.state.data[index] = e.target.value.trim();
 
     //set the changed state
     this.setState({ data: this.state.data });
@@ -48,6 +49,22 @@ class App extends Component {
 
     //update the state
     this.setState({ data: this.state.data });
+    console.log(this.state.data, "!!!");
+  };
+
+  resetAll = index => {
+    if (this.state.data.length > 1) {
+      this.state.data.splice(index, this.state.data.length - 1);
+      console.log(this.state.data, "!!!");
+
+      //update the state
+      this.setState({ data: this.state.data });
+      console.log(this.state.data, "!!!");
+    }
+
+    // //second method
+    // this.setState({ data: [""] });
+    // console.log(this.state.data, "!!!");
   };
 
   render() {
@@ -55,6 +72,7 @@ class App extends Component {
       <div className="container">
         <header className="header">
           <h1 className="main-heading">Todo List</h1>
+          <Resetbutton resetAll={this.resetAll}> </Resetbutton>
           <TodoButton addInput={this.addInput}> </TodoButton>
         </header>
         <TodoList

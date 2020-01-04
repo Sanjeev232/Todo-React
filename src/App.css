@@ -3,6 +3,7 @@
   --color-white-1: #faf9f9;
   --color-list-items-1: #698474;
   --color-yellow-hover: #fe9801;
+  --color-crimson-dark: #c72c41;
   --box-shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
 
@@ -43,7 +44,7 @@ body {
   margin: 7rem auto;
   box-shadow: var(--box-shadow-dark);
   min-height: 81vh;
-  border: 1px solid #fff3af;
+  border: 2px solid var(--color-white-1);
   border-radius: 1rem;
   background-color: var(--color-Grey-dark-1);
 }
