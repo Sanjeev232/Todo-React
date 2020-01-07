@@ -3,7 +3,7 @@ import "./todolist.style.css";
 
 class TodoList extends Component {
   
-  componentDidUpdate(event) {
+  componentDidUpdate() {
     // console.log("@@@@@@@@@@@@ 2");
     // console.dir(this.props.state.data);
     this.toggleInputFocus.focus();
